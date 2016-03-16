@@ -9,7 +9,12 @@ router.use(function (req,res,next) {
 });
 
 router.get("/",function(req,res){
+    console.log("request address: " + req.connection.remoteAddress)
     res.sendFile(path + "index.html");
+});
+
+router.get("/levels",function(req,res){
+    res.sendFile(path + "levels.html");
 });
 
 router.get("/about",function(req,res){
